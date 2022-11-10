@@ -11,29 +11,29 @@ class ApplicationController < Sinatra::Base
     posts.to_json(inlude: :likes)
   end
    
-  # post '/posts' do
-  #   post = Post.create(
-  #     title: params[:title],
-  #     image: params[:image],
-  #     short_story: params[:short_story]
-  #   )
-  #   post.to_json
-  # end
+  post '/posts' do
+    post = Post.create(
+      title: params[:title],
+      image: params[:image],
+      short_story: params[:short_story]
+    )
+    post.to_json
+  end
 
-  # patch '/posts/:id' do
-  #   post = Post.find(params[:id])
-  #   post.update(
-  #     title: params[:title],
-  #     image: params[:image],
-  #     short_story: params[:short_story]
-  #   )
-  #   post.to_json
-  # end
+  patch '/posts/:id' do
+    post = Post.find(params[:id])
+    post.update(
+      title: params[:title],
+      image: params[:image],
+      short_story: params[:short_story]
+    )
+    post.to_json
+  end
 
-  # delete '/posts/:id' do
-  #   post = Post.find(params[:id])
-  #   post.destroy
-  #   post.to_json
-  # end
+  delete '/posts/:id' do
+    post = Post.find(params[:id])
+    post.destroy
+    post.to_json
+  end
 
 end
